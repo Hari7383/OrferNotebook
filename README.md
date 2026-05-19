@@ -134,29 +134,25 @@ pip install -r requirements.txt
 
 ---
 
+## 4️⃣ Install npm
+
+```bash
+cd electron
+npm install
+```
+
+---
+
 # ▶️ Run Project
 
 ```bash
-python app.py
+cd electron
 ```
 
 or
 
 ```bash
-streamlit run app.py
-```
-
----
-
-# ⚙️ Environment Variables
-
-Create a `.env` file:
-
-```env
-OPENAI_API_KEY=your_key
-GEMINI_API_KEY=your_key
-GROQ_API_KEY=your_key
-OPENROUTER_API_KEY=your_key
+npm start
 ```
 
 ---
@@ -166,16 +162,15 @@ OPENROUTER_API_KEY=your_key
 ```text
 OrferNotebook/
 │
-├── app.py
 ├── requirements.txt
 ├── README.md
 ├── LICENSE
-├── data/
-├── database/
+├── electron/
+├── frontend/
 ├── models/
-├── embeddings/
-├── uploads/
-├── utils/
+├── python/
+├── rag/
+├── storage/
 └── assets/
 ```
 
