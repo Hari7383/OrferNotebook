@@ -1,0 +1,40 @@
+{
+  "caching": {
+    "enabled": true,
+    "max_entries": 500,
+    "ttl_seconds": 3600,
+    "description": "Query result caching: stores answers to repeated questions"
+  },
+  "performance": {
+    "chunk_size": 512,
+    "chunk_overlap": 100,
+    "top_k_results": 10,
+    "reranker_batch_size": 32,
+    "description": "Tuning parameters for document processing and retrieval"
+  },
+  "models": {
+    "embedding": {
+      "model_name": "BAAI/bge-base-en-v1.5",
+      "device": "cpu",
+      "normalize_embeddings": true,
+      "precision": "fp32",
+      "description": "Embedding model. Set precision to 'fp16' for 50% memory reduction (slight quality loss)"
+    },
+    "reranker": {
+      "model_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+      "lazy_load": true,
+      "description": "Cross-encoder reranker. lazy_load=true means load only when needed"
+    }
+  },
+  "chromadb": {
+    "batch_size": 100,
+    "use_index": true,
+    "description": "ChromaDB optimization settings"
+  },
+  "monitoring": {
+    "track_metrics": true,
+    "slow_query_threshold_ms": 2000,
+    "log_queries": false,
+    "description": "Performance monitoring and logging"
+  }
+}
